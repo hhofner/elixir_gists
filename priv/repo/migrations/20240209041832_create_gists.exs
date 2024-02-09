@@ -6,7 +6,7 @@ defmodule ElixirGist.Repo.Migrations.CreateGists do
       add :name, :string
       add :description, :text
       add :markup_text, :text
-      add :user_id, references(:users, on_delete: :nothing)
+      add :user_id, references(:users, on_delete: :delete_all)
 
       timestamps(type: :utc_datetime)
     end
