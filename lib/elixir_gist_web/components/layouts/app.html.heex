@@ -21,7 +21,12 @@
     </div>
   </div>
   <div class="relative">
-    <button class="img-down-arrow" type="button" id="user-menu-button" phx-click={ElixirGistWeb.Layouts.App.toggle_dropdown_menu()}>
+    <button
+      class="img-down-arrow"
+      type="button"
+      id="user-menu-button"
+      phx-click={ElixirGistWeb.Layouts.App.toggle_dropdown_menu()}
+    >
       <img src="/images/user-image.svg" alt="Profile Image" class="round-image-padding w-8 h-8 " />
     </button>
     <div
@@ -49,7 +54,7 @@
           method="get"
           id="user-menu-item-1"
         >
-          Your gists 
+          Your gists
         </.link>
         <.link
           href="#"
@@ -59,7 +64,7 @@
           method="get"
           id="user-menu-item-2"
         >
-          Saved gists 
+          Saved gists
         </.link>
         <.link
           href={~p"/users/log_out"}
