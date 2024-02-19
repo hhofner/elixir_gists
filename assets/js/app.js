@@ -28,15 +28,19 @@ let Hooks = {};
 
 Hooks.UpdateLineNumbers = {
   mounted() {
+    const lineNumberText = document.querySelector("#line-numbers")
+
     this.el.addEventListener("input", () => {
       this.updateLineNumbers()
     })
 
     this.el.addEventListener("scroll", () => {
-      const lineNumberText = document.querySelector("#line-numbers")
-      if (!lineNumberText) return;
-
       lineNumberText.scrollTop = this.el.scrollTop
+    })
+
+    this.handleEvent("clear-textareas", () => {
+      this.el.value = ""
+      lineNumberText.value = "1\n"
     })
 
     this.updateLineNumbers()
