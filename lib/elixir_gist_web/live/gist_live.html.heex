@@ -1,3 +1,5 @@
-<div class="bg-white">
-  <%= @gist.markup_text %>
+<div class="bg-white" phx-hook="Highlight" id="highlight" data-name={@gist.name}>
+  <pre><code class="language-elixir" >
+    <%= @gist.markup_text %>
+  </code></pre>
 </div>
